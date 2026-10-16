@@ -67,6 +67,8 @@ The application requires the variables:
 
 An example configuration is provided in ` .env.example` .
 
+Copy the example file
+
 ## Build
 
 Package the application using Maven:
@@ -86,3 +88,17 @@ mvn spring-boot:run
 Default URL:
 
 http://localhost:8080/employees
+
+## Postman Collection
+
+A postman collection is incluided to test the Employees REST API.
+
+### Import Collection
+
+1. Open Postman
+2. Click Import.
+3. Select the file:
+
+	postman/employees_collection.postman_collection.json
+	
+4. Import the collection.

@@ -1,0 +1,620 @@
+{
+  "info": {
+    "_postman_id": "032e4915-1cc4-4d0b-b447-5d5129ff77ad",
+    "name": "Invex_Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "32609366"
+  },
+  "item": [
+    {
+      "name": "employees",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/employees",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "employees"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "ok",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/employees",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "employees"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "transfer-encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "date",
+              "value": "Fri, 16 Oct 2026 03:52:41 GMT"
+            },
+            {
+              "key": "keep-alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n  {\n    \"id\": 1,\n    \"name\": \"Liz\",\n    \"paternalSurname\": \"Armas\",\n    \"maternalSurname\": \"Rios\",\n    \"age\": 20,\n    \"sex\": \"F\",\n    \"birthdate\": \"15-05-2006\",\n    \"position\": \"Software Developer\",\n    \"createDate\": \"2026-10-15T21:39:42.785833\",\n    \"active\": true\n  },\n  {\n    \"id\": 2,\n    \"name\": \"Nelly Rubi\",\n    \"paternalSurname\": \"Navarro\",\n    \"maternalSurname\": \"NA\",\n    \"age\": 32,\n    \"sex\": \"F\",\n    \"birthdate\": \"15-05-1993\",\n    \"position\": \"Scrum\",\n    \"createDate\": \"2026-10-15T21:49:37.771751\",\n    \"active\": true\n  }\n]"
+        }
+      ]
+    },
+    {
+      "name": "employee",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/employees/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "employees",
+            "1"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "ok",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/employees/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "employees",
+                "1"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "transfer-encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "date",
+              "value": "Fri, 16 Oct 2026 03:43:37 GMT"
+            },
+            {
+              "key": "keep-alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"id\": 1,\n  \"name\": \"Liz\",\n  \"paternalSurname\": \"Armas\",\n  \"maternalSurname\": \"Rios\",\n  \"age\": 20,\n  \"sex\": \"F\",\n  \"birthdate\": \"15-05-2006\",\n  \"position\": \"Software Developer\",\n  \"createDate\": \"2026-10-15T21:39:42.785833\",\n  \"active\": true\n}"
+        },
+        {
+          "name": "employee 404",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/employees/10",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "employees",
+                "10"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "transfer-encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "date",
+              "value": "Fri, 16 Oct 2026 03:44:04 GMT"
+            },
+            {
+              "key": "keep-alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"timestamp\": \"2026-10-15T21:44:04.3404317\",\n  \"status\": 404,\n  \"error\": \"Not Found\",\n  \"message\": \"Employee not found with id: 10\",\n  \"path\": \"/employees/10\",\n  \"fieldErrors\": null\n}"
+        }
+      ]
+    },
+    {
+      "name": "employeeByName",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/employees/search?name=liz",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "employees",
+            "search"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "liz"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "ok",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/employees/search?name=liz",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "employees",
+                "search"
+              ],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "liz"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "transfer-encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "date",
+              "value": "Fri, 16 Oct 2026 04:38:02 GMT"
+            },
+            {
+              "key": "keep-alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n  {\n    \"id\": 1,\n    \"name\": \"Liz\",\n    \"paternalSurname\": \"Armas\",\n    \"maternalSurname\": \"Rios\",\n    \"age\": 20,\n    \"sex\": \"F\",\n    \"birthdate\": \"15-05-2006\",\n    \"position\": \"Software Developer\",\n    \"createDate\": \"2026-10-15T21:39:42.785833\",\n    \"active\": true\n  },\n  {\n    \"id\": 5,\n    \"name\": \"Liz 1\",\n    \"paternalSurname\": \"Armas\",\n    \"maternalSurname\": \"Rios\",\n    \"age\": 20,\n    \"sex\": \"F\",\n    \"birthdate\": \"15-05-2006\",\n    \"position\": \"Software Developer\",\n    \"createDate\": \"2026-10-15T22:29:27.089068\",\n    \"active\": true\n  },\n  {\n    \"id\": 6,\n    \"name\": \"Liz 2\",\n    \"paternalSurname\": \"Armas\",\n    \"maternalSurname\": \"Rios\",\n    \"age\": 20,\n    \"sex\": \"F\",\n    \"birthdate\": \"15-05-2006\",\n    \"position\": \"Software Developer\",\n    \"createDate\": \"2026-10-15T22:29:27.098865\",\n    \"active\": true\n  }\n]"
+        }
+      ]
+    },
+    {
+      "name": "employee create",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\"name\":\"Liz\",\r\n\"paternalSurname\":\"Armas\",\r\n\"maternalSurname\":\"Rios\",\r\n\"age\":20,\r\n\"sex\":\"F\",\r\n\"birthdate\":\"15-05-2006\",\r\n\"position\":\"Software Developer\",\r\n\"active\":true\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/employees",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "employees"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "ok",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"name\":\"Liz\",\r\n\"paternalSurname\":\"Armas\",\r\n\"maternalSurname\":\"Rios\",\r\n\"age\":20,\r\n\"sex\":\"F\",\r\n\"birthdate\":\"15-05-2006\",\r\n\"position\":\"Software Developer\",\r\n\"active\":true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/employees",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "employees"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "transfer-encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "date",
+              "value": "Fri, 16 Oct 2026 03:39:42 GMT"
+            },
+            {
+              "key": "keep-alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"id\": 1,\n  \"name\": \"Liz\",\n  \"paternalSurname\": \"Armas\",\n  \"maternalSurname\": \"Rios\",\n  \"age\": 20,\n  \"sex\": \"F\",\n  \"birthdate\": \"15-05-2006\",\n  \"position\": \"Software Developer\",\n  \"createDate\": \"2026-10-15T21:39:42.7858332\",\n  \"active\": true\n}"
+        }
+      ]
+    },
+    {
+      "name": "employee create all",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n   \"employees\": [\r\n    {\r\n\"name\":\"Liz 1\",\r\n\"paternalSurname\":\"Armas\",\r\n\"maternalSurname\":\"Rios\",\r\n\"age\":20,\r\n\"sex\":\"F\",\r\n\"birthdate\":\"15-05-2006\",\r\n\"position\":\"Software Developer\",\r\n\"active\":true\r\n},\r\n{\r\n\"name\":\"Liz 2\",\r\n\"paternalSurname\":\"Armas\",\r\n\"maternalSurname\":\"Rios\",\r\n\"age\":20,\r\n\"sex\":\"F\",\r\n\"birthdate\":\"15-05-2006\",\r\n\"position\":\"Software Developer\",\r\n\"active\":true\r\n}\r\n]}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/employees/createall",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "employees",
+            "createall"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "employee update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\"name\":\"Nelly Rubi\",\r\n\"paternalSurname\":\"Navarro\",\r\n\"maternalSurname\":\"NA\",\r\n\"age\":32,\r\n\"sex\":\"F\",\r\n\"birthdate\":\"15-05-1993\",\r\n\"position\":\"Scrum\",\r\n\"active\":true\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/employees/2",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "employees",
+            "2"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "ok",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"name\":\"Nelly Rubi\",\r\n\"paternalSurname\":\"Navarro\",\r\n\"maternalSurname\":\"NA\",\r\n\"age\":32,\r\n\"sex\":\"F\",\r\n\"birthdate\":\"15-05-1993\",\r\n\"position\":\"Scrum\",\r\n\"active\":true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/employees/2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "employees",
+                "2"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "transfer-encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "date",
+              "value": "Fri, 16 Oct 2026 03:51:50 GMT"
+            },
+            {
+              "key": "keep-alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"id\": 2,\n  \"name\": \"Nelly Rubi\",\n  \"paternalSurname\": \"Navarro\",\n  \"maternalSurname\": \"NA\",\n  \"age\": 32,\n  \"sex\": \"F\",\n  \"birthdate\": \"15-05-1993\",\n  \"position\": \"Scrum\",\n  \"createDate\": \"2026-10-15T21:49:37.771751\",\n  \"active\": true\n}"
+        },
+        {
+          "name": "error",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"name\":\"\",\r\n\"paternalSurname\":\"Navarro\",\r\n\"maternalSurname\":\"NA\",\r\n\"age\":-32,\r\n\"sex\":\"F\",\r\n\"birthdate\":\"15-05-1993\",\r\n\"position\":\"Scrum\",\r\n\"active\":true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/employees/2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "employees",
+                "2"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "transfer-encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "date",
+              "value": "Fri, 16 Oct 2026 04:12:40 GMT"
+            },
+            {
+              "key": "connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"timestamp\": \"2026-10-15T22:12:40.2389691\",\n  \"status\": 400,\n  \"error\": \"Bad Request\",\n  \"message\": \"Validation failed\",\n  \"path\": \"/employees/2\",\n  \"fieldErrors\": {\n    \"name\": \"Name is required\",\n    \"age\": \"Age cannot be negative\"\n  }\n}"
+        }
+      ]
+    },
+    {
+      "name": "employee delete",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/employees/4",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "employees",
+            "4"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "ok",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/employees/4",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "employees",
+                "4"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "text",
+          "header": [
+            {
+              "key": "date",
+              "value": "Fri, 16 Oct 2026 04:21:33 GMT"
+            },
+            {
+              "key": "keep-alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": ""
+        },
+        {
+          "name": "error",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/employees/41",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "employees",
+                "41"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "transfer-encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "date",
+              "value": "Fri, 16 Oct 2026 04:23:16 GMT"
+            },
+            {
+              "key": "keep-alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"timestamp\": \"2026-10-15T22:23:16.7424362\",\n  \"status\": 404,\n  \"error\": \"Not Found\",\n  \"message\": \"Employee not found with id: 41\",\n  \"path\": \"/employees/41\",\n  \"fieldErrors\": null\n}"
+        }
+      ]
+    }
+  ]
+}
